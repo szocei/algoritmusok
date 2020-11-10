@@ -19,7 +19,7 @@ function getMinElementFromAnArray(arr) {
 
 //2. Maximum kiválasztás
 
-const intArr2 = [1,2,3,4,5,6,7,8,9,10,12,14]
+const intArr2 = [11,2,312,4,5,6,17,84,9,10,12,14]
 
 function maxKivalasztas(arr) {
     let max = arr[0];
@@ -71,4 +71,53 @@ function parosokSzama(arr){
 }
 
 parosokSzama(intArr2);
+
+//6. Második legkisebb elem, növekvő sorrend
+
+function masodikLegkisebb(arr){
+    let temp=0;
+    let n=arr.length;
+    for(let i=0; i<n-1; i += 1){
+        for(let j=i+1;j<n; j += 1){
+
+        
+      if(arr[i]>arr[j]){
+          temp=arr[j];
+          arr[j]=arr[i];
+          arr[i]=temp;
+      }
+    }
+    }
+    console.log([arr]);
+    console.log(intArr2[1]);
+}
+
+masodikLegkisebb(intArr2);
+
+//7. 3. legnagyobb eleme csökkenő sorrend
+
+function harmadikLegnagyobb(arr){
+    let temp=0;
+    let n=arr.length;
+    for(let i=0; i<n-1; i += 1){
+        for(let j=i+1;j<n; j += 1){
+
+        
+      if(arr[i]<arr[j]){
+          temp=arr[j];
+          arr[j]=arr[i];
+          arr[i]=temp;
+      }
+    }
+    }
+    console.log([arr]);
+    console.log(intArr2[2]);
+}
+
+harmadikLegnagyobb(intArr2);
+
+
+
+
+
 
