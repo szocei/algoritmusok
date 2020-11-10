@@ -19,7 +19,7 @@ function getMinElementFromAnArray(arr) {
 
 //2. Maximum kiválasztás
 
-const intArr2 = [11,2,312,4,5,6,17,84,9,10,12,14]
+const intArr2 = [11,2,312,23,4,5,6,17,84,9,10,12,14,123]
 
 function maxKivalasztas(arr) {
     let max = arr[0];
@@ -115,6 +115,25 @@ function harmadikLegnagyobb(arr){
 }
 
 harmadikLegnagyobb(intArr2);
+
+//8. elemkeresés lineárisan
+
+function linearisKereso(array , keres){
+   let n = array.length
+   
+    for(let i=0 ; i<n ; i++){
+        if(keres===array[i]){
+         return console.log(true);
+        }
+    }
+ return console.log(false);
+}
+
+console.log([intArr2]);
+linearisKereso(intArr2,23);
+
+//9. logaritmikus keresés
+
 
 
 
