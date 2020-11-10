@@ -196,3 +196,42 @@ function azonosKereses(arr,elem){
 }
 
 azonosKereses(intArr2, 11);
+
+//11.buborekos rendezés
+const arrfloat2=[1.23, 2.34, 23.34,234.345,23.123,1.23,2.23,3.45];
+
+function buborekosRendez(arr){
+    let n = arr.length;
+    for(let i=n-1;i>0;i--)
+        for(let j=0; j<i; j++)
+            if(arr[j]>arr[j+1]){
+                let tmp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = tmp;                
+            }
+    
+    console.log([arr]);
+}
+
+buborekosRendez(arrfloat2);
+
+//12. csökkenő buborékos
+const float2=[1.23, 2.34, 23.34,234.345,23.123,1.23,2.23,3.45,1000,1230,123,1234,12345,'aa','bb'];
+function buborekosRendez2(arr){
+    let n = arr.length;
+    for(let i=n-1;i>0;i--)
+        for(let j=0; j<i; j++)
+            if(arr[j]<arr[j+1]){
+                let tmp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = tmp;                
+            }
+    
+    console.log([arr]);
+}
+
+buborekosRendez2(float2);
+
+//13. beszúrás
+
+
