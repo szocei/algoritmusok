@@ -2,7 +2,7 @@
 
 //1. Minimum kiválasztás
 
-const intArr = [3254, 546, 23426, 3476, 234, 256365, 23, 4];
+const intArr = [3254, 546, 23426, 3476, 234, 256365, 23, 4,5,6,];
 
 function getMinElementFromAnArray(arr) {
     let min = arr[0];
@@ -19,7 +19,7 @@ function getMinElementFromAnArray(arr) {
 
 //2. Maximum kiválasztás
 
-const intArr2 = [11,2,312,23,4,5,6,17,84,9,10,12,14,123]
+const intArr2 = [11,2,312,23,4,5,6,17,84,9,10,12,14,123,43,44,5,666,65,67,4,54,232,11,11,11]
 
 function maxKivalasztas(arr) {
     let max = arr[0];
@@ -89,9 +89,28 @@ function masodikLegkisebb(arr){
     }
     }
     console.log([arr]);
-    console.log(intArr2[1]);
+    
 }
 
+function novekvoSorrend(arr){
+    let temp=0;
+    let n=arr.length;
+    for(let i=0; i<n-1; i += 1){
+        for(let j=i+1;j<n; j += 1){
+
+        
+      if(arr[i]>arr[j]){
+          temp=arr[j];
+          arr[j]=arr[i];
+          arr[i]=temp;
+      }
+    }
+    }
+    console.log([arr]);
+    
+}
+
+console.log(intArr2[1]);
 masodikLegkisebb(intArr2);
 
 //7. 3. legnagyobb eleme csökkenő sorrend
@@ -134,9 +153,46 @@ linearisKereso(intArr2,23);
 
 //9. logaritmikus keresés
 
+function logaritmikusKereses(arr, keres){
+    novekvoSorrend(arr); 
+    let also=0;
+     let n=arr.length;
+     let felso=n-1;
+
+     while (also<=felso) {
+        
+      let kozep =Math.floor((also+felso)/2);
+
+     
+    if(keres===arr[kozep]){
+      return console.log('igen van benne')
+    }
+   else if(arr[kozep]<keres)
+            also = kozep+1;
+   
+     else 
+              felso = kozep-1;
+     
+}   
+  return console.log('nincs benne');
+ }
+   
+ logaritmikusKereses(intArr2,122);
+
+ //10. hányszor van azonos benne
+
+function azonosKereses(arr,elem){
+    let db=0;
+    for(let i=0; i<arr.length ;i += 1){
+        
+        if(arr[i]===elem){
+            db +=1;
+        }
+    }
+    console.log(db +' darab van benne');
 
 
+    
+}
 
-
-
-
+azonosKereses(intArr2, 11);
